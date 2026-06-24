@@ -1,0 +1,17 @@
+<div metal:use-macro="load: shared/_layout.pt">
+  <main metal:fill-slot="content">
+    <nav tal:condition="breadcrumbs" class="breadcrumbs">
+      <a tal:repeat="crumb breadcrumbs"
+         tal:attributes="href crumb['href']"
+         tal:content="crumb['title']">Crumb</a>
+    </nav>
+
+    <div class="leaf">
+      <img tal:attributes="src node.image; alt node.title" />
+      <div class="caption">
+        <h1 tal:content="node.title">Title</h1>
+        <p tal:content="node.text">Text goes here.</p>
+      </div>
+    </div>
+  </main>
+</div>

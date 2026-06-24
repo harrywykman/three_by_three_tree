@@ -1,0 +1,14 @@
+<div metal:use-macro="load: shared/_layout.pt">
+  <main metal:fill-slot="content">
+    <head>
+      <title tal:content="title">Moritz</title>
+    </head>
+    <body>
+    <h1>404 - Page Not Found</h1>
+    <span>
+    <p tal:content="message">Default message</p>
+    <a href="/">Back</a>
+    </span>
+    </body>
+  </main>
+</div>

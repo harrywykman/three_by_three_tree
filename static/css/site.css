@@ -1,0 +1,130 @@
+:root {
+  --grid-gap: clamp(0.25rem, 1vw, 0.75rem);
+  --grid-size: min(90vw, 90vh, 700px); /* cap so it doesn't get huge on big monitors */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #000; /* was #fafafa */
+  color: #888;
+}
+
+.breadcrumbs {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.breadcrumbs a:not(:last-child)::after {
+  content: " | ";
+  color: #333;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #888;
+}
+
+.grid-3x3 {
+  width: var(--grid-size);
+  height: var(--grid-size);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: var(--grid-gap);
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #ddd;
+  text-decoration: none;
+  color: inherit;
+}
+
+.square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(80%);
+}
+
+.square span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4em;
+  font-size: clamp(0.7rem, 2vw, 1rem);
+  background: rgba(0,0,0,0.5);
+  color: #999;
+  font-size: 1.25em;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.square-empty {
+  background: #111;
+}
+
+.leaf {
+  width: var(--grid-size);
+  height: var(--grid-size);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.leaf img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leaf .caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1em;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+// <weight>: Use a value from 100 to 900
+// <uniquifier>: Use a unique and descriptive class name
+
+.raleway-leaf {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

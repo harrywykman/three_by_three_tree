@@ -1,0 +1,23 @@
+<div metal:use-macro="load: shared/_layout.pt">
+  <main metal:fill-slot="content">
+    <nav tal:condition="breadcrumbs" class="breadcrumbs">
+      <a tal:repeat="crumb breadcrumbs"
+         tal:attributes="href crumb['href']"
+         tal:content="crumb['title']">Crumb</a>
+    </nav>
+
+    <div class="grid-3x3">
+  <tal:block tal:repeat="child node.children">
+    <a tal:condition="child"
+       tal:attributes="href child.href"
+       class="square">
+      <img tal:condition="child.thumbnail"
+           tal:attributes="src child.thumbnail; alt child.title" />
+      <span tal:content="child.title">Title</span>
+    </a>
+    <div tal:condition="not child" class="square square-empty"></div>
+  </tal:block>
+</div>
+  </main>
+</div>
+

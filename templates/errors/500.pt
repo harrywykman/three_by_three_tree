@@ -1,0 +1,13 @@
+<div metal:use-macro="load: shared/_layout.pt">
+  <main metal:fill-slot="content">
+      <head>
+      <title tal:content="title">Moritz</title>
+    </head>
+    <body>
+        <h1>500 - Internal Server Error</h1>
+        <p tal:content="message">Default message</p>
+        <div tal:condition="error" tal:content="error">Error details</div>
+        <a href="/vineyards">Go Home</a>
+    </body>
+  </main>
+</div>

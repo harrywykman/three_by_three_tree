@@ -1,0 +1,10 @@
+<div metal:use-macro="load: ./shared/_layout.pt">
+    <div metal:fill-slot="content" tal:omit-tag="True">
+        <div class="msg" tal:condition="message">${ message }</div>
+        <div class="error-msg" tal:condition="error">${ error }</div>
+    </div>
+
+    <div metal:fill-slot="additional-css" tal:omit-tag="True">
+        <!-- additional CSS -->
+    </div>
+</div>
