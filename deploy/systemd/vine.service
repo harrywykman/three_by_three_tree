@@ -3,7 +3,7 @@ Description=gunicorn uvicorn service for Mosite App
 After=syslog.target
 
 [Service]
-ExecStart=/apps/venv-mosite/bin/gunicorn -b 127.0.0.1:8001 -w 4 -k uvicorn.workers.UvicornWorker main:app --name mosite --chdir /apps/mosite/ --access-logfile /apps/logs/mosite/access.log --error-logfile /apps/logs/mosite/errors.log --user mosite
+ExecStart=/apps/venv-mosite/bin/gunicorn -b 127.0.0.1:8001 -w 4 -k uvicorn.workers.UvicornWorker main:app --name mosite --chdir /apps/three_by_three_tree/ --access-logfile /apps/logs/three_by_three_tree/access.log --error-logfile /apps/logs/three_by_three_tree/errors.log --user mosite
 
 # \/ \/ <- Added post recording for better restart perf.
 ExecReload=/bin/kill -s HUP $MAINPID
@@ -13,7 +13,7 @@ PrivateTmp=true
 # /\ /\ <- Added post recording for better restart perf.
 
 # Requires systemd version 211 or newer
-RuntimeDirectory=/apps/mosite/
+RuntimeDirectory=/apps/three_by_three_tree/
 Restart=always
 Type=notify
 StandardError=syslog
