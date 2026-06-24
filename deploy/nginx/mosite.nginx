@@ -8,7 +8,7 @@ server {
         gzip            on;
         gzip_buffers    8 256k;
 
-        alias /apps/mosite/static;
+        alias /apps/three_by_three_tree/static;
         expires 365d;
     }
     location / {
